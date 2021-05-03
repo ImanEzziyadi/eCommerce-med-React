@@ -9,26 +9,26 @@ const ProductCard = ({product}) => {
 
   return (
     <div className="col">
-      <div className="card h-100">
+      <div className="card h-50">
+    
+      <Link to={`/ProductDetails/${product._id}`}>
         <img
           src={product.image}
           className="card-img-top"
           alt="..."
         />
+        </Link>
         <div className="card-body">
           <h5 className="card-title">{product.name}</h5>
           <div className="card-text">
           <p>{ product.short }</p>
-          <p className="text-danger h5">{ product.price }</p>
+          {/* <p className="text-danger h5">{ product.price }</p> */}
           <div className= "container d-flex " >
            <button className="btn btn-info" onClick={() => {
             dispatch(addToCart(product))
           }}>Add to cart</button>
 
-          <button className="btn btn-secondary" onClick={() => { 
-             <Link  to="/ProductDetails">view</Link>  
-            // dispatch(getOneProduct(product))
-          }}>details</button>
+         
           </div>
            
           </div>

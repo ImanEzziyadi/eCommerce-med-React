@@ -3,7 +3,8 @@ const actiontypes = () => {
       productCatalog: {
         set: 'SET_PRODUCT_CATALOG',
         loading: 'LOADING',
-        setPost: 'SET_POST'
+        setProducts: 'SET_PRODUCTS',
+        setProduct: 'SET_PRODUCT'
       },
       // getProduct: {
       //   get: 'get-one-product'
