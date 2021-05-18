@@ -17,7 +17,8 @@ const actiontypes = () => {
       },
       auth: {
         login: 'LOGIN',
-        logout: 'LOGOUT'
+        logout: 'LOGOUT',
+        register: 'REGISTER'
       }
     }
   }

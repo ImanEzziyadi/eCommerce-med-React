@@ -1,8 +1,21 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import ShoppingCart from '../shoppingCart/ShoppingCart';
+import { useSelector, useDispatch } from 'react-redux'
+import { logout } from '../../store/actions/authenticate'
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const isAuth = useSelector(state => state.auth.isAuthenticated)
+  const shoppingCart = useSelector(state => state.cartReducer.shoppingCart);
+
+  const handlelogout = (e) =>{
+  e.preventDefault()  
+  dispatch(logout())
+
+}
+
+
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
@@ -31,8 +44,14 @@ const Navbar = () => {
                 <NavLink exact className="nav-link" to="/products">Products</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink exact className="nav-link" to="/Login">Login</NavLink>
+              {
+                // isAuth ? <li><NavLink exact to="/" className="nav-link" activeClassName="active-link">logout</NavLink></li>
+                isAuth ? <button  onClick={e => handlelogout(e)}>log out</button>
+                  : <li><NavLink exact to="/login" className="nav-link" activeClassName="active-link">Login</NavLink></li>
+              }
               </li>
+              {/* <button  onClick="handlelogout">log out</button> */}
+
 
 
               <li className="nav-item dropdown">
@@ -44,6 +63,7 @@ const Navbar = () => {
                   aria-expanded="false"
                 >
                  <i className="fas fa-shopping-cart"></i>
+                 <span show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{shoppingCart.length}</span>
                 </span>
                 <ul className="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdownMenuLink">
                   <ShoppingCart /> 

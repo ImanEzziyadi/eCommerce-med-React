@@ -5,7 +5,9 @@ import Navbar from './components/navigation/Navbar';
 import Home from './views/Home';
  import Products from './views/Products';
  import Login from './views/Login';
+ import Register from './views/Register';
  import ProductDetails from './views/ProductDetails'
+import NotFound from './views/NotFound';
 
 function App() {
   return (
@@ -17,7 +19,10 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/products" component={Products} />
           <Route exact path="/Login" component={Login} />
+          <Route exact path="/register" component={Register} /> 
           <Route exact path="/ProductDetails/:id" component={ProductDetails} />
+          <Route exact path="*" component={NotFound} />
+          
           
         </Switch>
       </div>
