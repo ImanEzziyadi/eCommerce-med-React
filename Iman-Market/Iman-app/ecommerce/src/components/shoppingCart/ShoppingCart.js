@@ -6,6 +6,7 @@ const ShoppingCart = () => {
 
   const shoppingCart = useSelector(state => state.cartReducer.shoppingCart);
   const totalCartAmount = useSelector(state => state.cartReducer.totalCartAmount);
+  const totalCartQuantity = useSelector(state => state.cartReducer.totalCartQuantity);
 
   const empty = (
     <div className="p-2 d-flex align-items-center">
@@ -29,8 +30,13 @@ const ShoppingCart = () => {
       <div className="p-2 d-flex justify-content-between align-items-center">
         <div>
           <div className="total-price">
+          
             Total Amount: <span>{totalCartAmount}</span>
           </div>
+          <div className="total-price">
+          
+          Total Quantity: <span>{totalCartQuantity}</span>
+        </div>
           <small className="text-muted">ink. vat</small>
         </div>
         <button className="btn btn-info">Checkout</button>

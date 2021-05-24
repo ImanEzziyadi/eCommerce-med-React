@@ -7,7 +7,10 @@ import { logout } from '../../store/actions/authenticate'
 const Navbar = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(state => state.auth.isAuthenticated)
-  const shoppingCart = useSelector(state => state.cartReducer.shoppingCart);
+  // const shoppingCart = useSelector(state => state.cartReducer.shoppingCart);
+  const totalCartQuantity = useSelector(state => state.cartReducer.totalCartQuantity);
+
+
 
   const handlelogout = (e) =>{
   e.preventDefault()  
@@ -15,12 +18,11 @@ const Navbar = () => {
 
 }
 
-
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
-          <div className="container">
-            <Link className="navbar-brand" to="/">LOGO</Link>
+          <div className="container fs-4">
+            <Link className="navbar-brand" to="/">Iman-shop</Link>
             <button
 
             // Toggle button
@@ -37,24 +39,21 @@ const Navbar = () => {
 
           <div className="collapse navbar-collapse" id="navbar-links">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <NavLink exact className="nav-link" to="/">Home</NavLink>
+              <li className="nav-item py-4">
+                <NavLink exact  to="/" className="nav-link ">Home</NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink exact className="nav-link" to="/products">Products</NavLink>
+              <li className="nav-item py-4 ">
+                <NavLink exact  to="/products" className="nav-link">Products</NavLink>
               </li>
-              <li className="nav-item">
-              {
-                // isAuth ? <li><NavLink exact to="/" className="nav-link" activeClassName="active-link">logout</NavLink></li>
-                isAuth ? <button  onClick={e => handlelogout(e)}>log out</button>
-                  : <li><NavLink exact to="/login" className="nav-link" activeClassName="active-link">Login</NavLink></li>
-              }
-              </li>
-              {/* <button  onClick="handlelogout">log out</button> */}
+            
+              { 
+                 isAuth ? <li className="nav-item py-4 "><NavLink exact  to="/" className="nav-link " activeClassName="active-link" onClick={e => handlelogout(e)}>log out</NavLink></li>
+             
+                  : <li className="nav-item py-4"><NavLink exact  to="/login" className="nav-link " activeClassName="active-link">Login</NavLink></li>
+               }
+        
 
-
-
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown py-4">
                 <span
                   className="nav-link dropdown-toggle hidden-arrow"
                   id="navbarDropdownMenuLink"
@@ -62,10 +61,11 @@ const Navbar = () => {
                   data-mdb-toggle="dropdown"
                   aria-expanded="false"
                 >
-                 <i className="fas fa-shopping-cart"></i>
-                 <span show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">{shoppingCart.length}</span>
+                 <i className="fas fa-shopping-cart "></i>
+                  <span show="cartItemCount" className="badge rounded-pill badge-notification bg-danger">{totalCartQuantity}</span>
+               
                 </span>
-                <ul className="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdownMenuLink">
+                <ul className="dropdown-menu dropdown-menu-end shopping-cart " aria-labelledby="navbarDropdownMenuLink">
                   <ShoppingCart /> 
                 </ul>
               </li>

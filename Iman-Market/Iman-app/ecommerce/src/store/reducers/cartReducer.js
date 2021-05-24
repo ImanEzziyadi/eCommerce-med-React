@@ -17,13 +17,14 @@ const cartReducer = (state = initState, action) => {
           ...action.payload,
           quantity: 1
         }
-        console.log(itemIndex);
+        // console.log(itemIndex);
         itemIndex < 0
         ? state.shoppingCart = [...state.shoppingCart, _product]
         : state.shoppingCart[itemIndex].quantity += 1
 
         state.totalCartAmount = getTotalAmount(state.shoppingCart);
         state.totalCartQuantity = getTotalQuantity(state.shoppingCart);
+      
 
       }
       catch(err) {console.log(err)}

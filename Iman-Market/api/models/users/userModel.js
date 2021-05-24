@@ -10,7 +10,7 @@ exports.registerUser = (req, res) => {
     if(err) {
       return res.status(400).json(err)
     } else {
-
+      console.log(req.body)
       if(result) {
         return res.status(400).json({
           statusCode: 400,
