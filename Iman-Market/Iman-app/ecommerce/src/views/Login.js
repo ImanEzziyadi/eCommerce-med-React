@@ -47,7 +47,7 @@ const Login = () => {
 
       {/* Register buttons  */}
       <div className="text-center">
-        <p>Not a member? <Link exact to="/register" className="btn btn-link">Register</Link></p>
+        <p>Not a member? <Link to="/register" className="btn btn-link">Register</Link></p>
         <p>or sign up with:</p>
     <button type="button" className="btn btn-secondary btn-floating mx-1">
       <i className="fab fa-facebook-f"></i>

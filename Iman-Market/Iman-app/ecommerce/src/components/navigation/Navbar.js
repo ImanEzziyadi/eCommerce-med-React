@@ -22,7 +22,7 @@ const Navbar = () => {
       <div>
         <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
           <div className="container fs-4">
-            <Link className="navbar-brand" to="/">Iman-shop</Link>
+            <NavLink  className="navbar-brand" to="/">Iman-shop</NavLink>
             <button
 
             // Toggle button
@@ -40,16 +40,16 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbar-links">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item py-4">
-                <NavLink exact  to="/" className="nav-link ">Home</NavLink>
+                <NavLink exact  to="/" className="nav-link  active">Home</NavLink>
               </li>
               <li className="nav-item py-4 ">
-                <NavLink exact  to="/products" className="nav-link">Products</NavLink>
+                <NavLink exact  to="/products" className="nav-link active">Products</NavLink>
               </li>
             
               { 
-                 isAuth ? <li className="nav-item py-4 "><NavLink exact  to="/" className="nav-link " activeClassName="active-link" onClick={e => handlelogout(e)}>log out</NavLink></li>
+                 isAuth ? <li className="nav-item py-4 "><NavLink exact  to="/" className="nav-link active " activeClassName="active-link" onClick={e => handlelogout(e)}>log out</NavLink></li>
              
-                  : <li className="nav-item py-4"><NavLink exact  to="/login" className="nav-link " activeClassName="active-link">Login</NavLink></li>
+                  : <li className="nav-item py-4"><NavLink exact  to="/login" className="nav-link active" activeClassName="active-link">Login</NavLink></li>
                }
         
 

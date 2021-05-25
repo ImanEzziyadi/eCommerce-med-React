@@ -41,7 +41,7 @@ const Register = () => {
             </div>
             <div className="col">
               <div>
-                <input type="text" id="form3Example2" class="form-control " onChange={e => setLastName(e.target.value)}/>
+                <input type="text" id="form3Example2" className="form-control " onChange={e => setLastName(e.target.value)}/>
                 <label className="form-label" htmlFor="form3Example2">Last name</label>
               </div>
             </div>
