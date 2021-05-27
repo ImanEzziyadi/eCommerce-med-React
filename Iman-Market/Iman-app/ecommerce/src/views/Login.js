@@ -19,10 +19,6 @@ const Login = () => {
     dispatch(login({email, password}))
     try { history.push(history.location.state.from.pathname) }
     catch { history.push('/') }
-    
-
-
-    
   }
 
   return (

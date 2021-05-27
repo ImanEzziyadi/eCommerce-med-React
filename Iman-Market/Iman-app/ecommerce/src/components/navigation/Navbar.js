@@ -7,15 +7,13 @@ import { logout } from '../../store/actions/authenticate'
 const Navbar = () => {
   const dispatch = useDispatch();
   const isAuth = useSelector(state => state.auth.isAuthenticated)
-  // const shoppingCart = useSelector(state => state.cartReducer.shoppingCart);
   const totalCartQuantity = useSelector(state => state.cartReducer.totalCartQuantity);
 
 
 
   const handlelogout = (e) =>{
-  e.preventDefault()  
-  dispatch(logout())
-
+    e.preventDefault()  
+    dispatch(logout())
 }
 
     return (

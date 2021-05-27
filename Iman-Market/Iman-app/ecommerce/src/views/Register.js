@@ -14,7 +14,8 @@ const Register = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const registerClick = () => {
+  const registerClick = e => {
+    e.preventDefault();
     const _user={
       firstName,
       lastName,
@@ -23,10 +24,10 @@ const Register = () => {
     }
 
     dispatch(register(_user))
-
     try { history.push(history.location.state.from.pathname) }
-    catch { history.push('/') }
+    catch (error) { history.push('/') }
   }
+
     return (
         <div  className="container mt-5">
         <form  className="text-center p-5 border col-6 mx-auto" >
@@ -62,7 +63,7 @@ const Register = () => {
           </div>
     
            {/* Submit button  */}
-          <button type="submit" className="btn btn-secondary btn-block mb-4" onClick={registerClick }>Sign up</button>
+          <button type="submit" className="btn btn-secondary btn-block mb-4" onClick={e => registerClick(e)}>Sign up</button>
     
           
     

@@ -8,9 +8,8 @@ const authReducer = (state = initState, action) => {
 
   switch(action.type) {
     case actiontypes().auth.login:
-      // console.log("auth", state.isAuthenticated)
+     
       state.isAuthenticated = action.payload
-      // console.log("auth", state.isAuthenticated)
       return state
 
     case actiontypes().auth.logout:

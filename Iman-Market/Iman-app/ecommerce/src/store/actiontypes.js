@@ -6,10 +6,7 @@ const actiontypes = () => {
         setProducts: 'SET_PRODUCTS',
         setProduct: 'SET_PRODUCT'
       },
-      // getProduct: {
-      //   get: 'get-one-product'
-
-      // },
+      
       cart: {
         add: 'ADD_TO_CART',
         remove: 'REMOVE_FROM_CART',

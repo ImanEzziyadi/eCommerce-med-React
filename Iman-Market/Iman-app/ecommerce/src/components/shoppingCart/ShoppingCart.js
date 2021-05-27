@@ -27,17 +27,16 @@ const ShoppingCart = () => {
 
       <div className="dropdown-divider"></div>
 
-      <div className="p-2 d-flex justify-content-between align-items-center">
+      <div className="p-2 d-flex justify-content-between align-items-center bg-secondary container">
         <div>
-          <div className="total-price">
-          
-            Total Amount: <span>{totalCartAmount}</span>
+          <div className="  ">
+            Total Amount: <span>{totalCartAmount} k</span>
           </div>
-          <div className="total-price">
+          <div className=" ">
           
           Total Quantity: <span>{totalCartQuantity}</span>
         </div>
-          <small className="text-muted">ink. vat</small>
+          <small >ink. vat</small>
         </div>
         <button className="btn btn-info">Checkout</button>
       </div>

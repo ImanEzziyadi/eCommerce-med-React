@@ -30,14 +30,8 @@ let token = localStorage.getItem('token')
     }
   
 }
-
-
-    
  
 
-
-
-// export const register = ({firstName, lastName, email, password}) => {
 export const register = _user => {
   return async dispatch => {
   const user = {
@@ -45,7 +39,8 @@ export const register = _user => {
     password: _user.password
   }
   console.log(_user)
-  await axios.post('http://localhost:9999/api/users/register', _user)
-  dispatch('login', {user})
+  const res = await axios.post('http://localhost:9999/api/users/register', _user)
+  console.log(res)
+  dispatch(login(user))
 }
 }

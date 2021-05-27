@@ -13,7 +13,6 @@ const ProductDetails = () => {
     dispatch(getOneProduct(id))
 
     return () => {
-      // console.log('cleanup');
       dispatch(setProduct(null))
     }
 
@@ -68,13 +67,13 @@ const ProductDetails = () => {
   
         <div className="col-lg-5 text-center text-md-left">
   
-          <h2 className="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
-            <strong>{product.name}</strong>
-          </h2>
+          <div className="h2-responsive text-center text-md-left product-name font-weight-bold dark-grey-text mb-1 ml-xl-0 ml-4">
+            <h4>{product.name}</h4>
+          </div>
           <span className="badge badge-danger product mb-4 ml-xl-0 ml-4">bestseller</span>
           <h3 className="h3-responsive text-center text-md-left mb-5 ml-xl-0 ml-4">
             <span className="red-text font-weight-bold">
-              <strong className="pris">{ product.price } kr</strong>
+              <strong className="text-danger">{ product.price } kr</strong>
             </span>
           </h3>
   
@@ -140,33 +139,6 @@ const ProductDetails = () => {
   
   </div>
    
- 
-  
-  
-  //   <divclassNameName="col">
-    
-  //   <div className="card h-100">
-  //     <img
-  //       src={product.image}
-  //       className="card-img-top"
-  //       alt="..."
-  //     />
-  //     <div className="card-body">
-  //       <h5 className="card-title">{product.name}</h5>
-  //       <div className="card-text">
-  //       <p>{ product.short }</p>
-  //       <p className="text-danger h5">{ product.price } kr</p>
-  //       <div className= "container d-flex " >
-  //        <button className="btn btn-info" onClick={() => {
-  //         dispatch(addToCart(product))
-  //       }}>Add to cart</button>
-
-  //       </div>
-         
-  //       </div>
-  //     </div>
-  //   </div>
-  // </divclassNameName=>
 )
 
   return (

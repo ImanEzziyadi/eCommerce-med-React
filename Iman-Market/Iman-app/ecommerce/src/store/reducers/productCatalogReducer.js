@@ -6,7 +6,6 @@ const initState = {
   loading: true
 }
 
-// const initState = null;
 
  const productCatalogReducer = (state = initState, action) => {
   switch(action.type) {
@@ -17,7 +16,7 @@ const initState = {
         loading: action.payload
       }
     case actiontypes().productCatalog.set:
-//       state = action.payload
+
        return {
         ...state,
         productCatalog: action.payload
