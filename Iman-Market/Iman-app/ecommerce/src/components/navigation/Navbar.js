@@ -18,9 +18,9 @@ const Navbar = () => {
 
     return (
       <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
+        <nav className="navbar navbar-expand-lg navbar-light bg-info">
           <div className="container fs-4">
-            <NavLink  className="navbar-brand" to="/">Iman-shop</NavLink>
+            <NavLink  className="navbar-brand" to="/">MediaMarkt-shop</NavLink>
             <button
 
             // Toggle button
